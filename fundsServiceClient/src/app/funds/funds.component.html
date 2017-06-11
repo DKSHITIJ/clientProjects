@@ -1,4 +1,4 @@
-<div style="align-content: center">
+<div>
     <p-dataTable [value]="funds" selectionMode="single" [(selection)]="selectedFund" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="10" [responsive]="true">
         <header>Funds Service</header>
         <p-column field="fundName" header="Fund Name" [sortable]="true"></p-column>
@@ -7,7 +7,7 @@
         <p-column field="noOfYears" header="No of Years" [sortable]="true"></p-column>
         <p-column field="fundAmount" header="Fund Amount" [sortable]="true"></p-column>
        <!-- <p-column field="totalFundDetails" header="Total Fund Details" [sortable]="true"></p-column> -->
-        <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
+        <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
     </p-dataTable>
 
     <p-dialog header="Funds Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
@@ -31,8 +31,8 @@
         </div>
 		<footer>
             <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-                <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+                <button type="button" pButton (click)="delete()" label="Delete"></button>
+                <button type="button" pButton (click)="save()" label="Save"></button>
             </div>
         </footer>
     </p-dialog>
