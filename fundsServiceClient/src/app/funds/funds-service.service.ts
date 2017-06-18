@@ -10,8 +10,8 @@ import { Funds } from './funds';
 @Injectable()
 export class FundsServiceService {
 
-     getTotalFundsURL = 'http://localhost:8080/v1/fundsservice/totalfunds';
-    // getTotalFundsURL = 'funds.json';
+      getTotalFundsURL = 'http://localhost:8080/v1/fundsservice/totalfunds';
+     // getTotalFundsURL = 'assets/data/funds.json';
     constructor(private _http: Http) { }
 
     /*getTotalFunds() {
@@ -34,6 +34,11 @@ export class FundsServiceService {
             .map((response: Response) => <Funds[]>response.json())
             .catch(error => Observable.throw(error.json()))
             .do(data => console.log(JSON.stringify(data)));
+
+             /* return this._http.get(this.getTotalFundsURL)
+            .map((response: Response) => <Funds[]>response.json().data.funds)
+
+            .do(data => console.log(JSON.stringify(data))); */
     }
 
 

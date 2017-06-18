@@ -1,7 +1,7 @@
 import { MockFundsService } from './mock-fundsService/mock-funds.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Funds } from './funds';
- import { FundsServiceService } from './funds-service.service';
+import { FundsServiceService } from './funds-service.service';
 
 @Component({
     selector: 'app-funds',
@@ -17,19 +17,20 @@ export class FundsComponent implements OnInit, OnDestroy {
     newFund: boolean;
     subscription ;
 
-      constructor(private fundsService: FundsServiceService) { }
-/*constructor(
-        private mockFundsService: MockFundsService
-    ) {
-        this.mockFundsService.start();
-    }*/
+
+constructor(
+       private fundsService: FundsServiceService
+    // private mockFundsService: MockFundsService
+    ) {}
+
     ngOnInit() {
         // this.fundsService.getTotalFunds().then(funds => this.funds = funds);
-         this.subscription = this.fundsService.getTotalFunds().subscribe(funds => this.funds = funds);
+           this.subscription = this.fundsService.getTotalFunds().subscribe(funds => this.funds = funds);
+          // this.mockFundsService.start();
     }
 
     ngOnDestroy() {
-     this.subscription.unsubscribe();
+      this.subscription.unsubscribe();
   }
 
     showDialogToAdd() {

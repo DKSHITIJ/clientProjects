@@ -1,4 +1,8 @@
-<div>
+<div class="mx-auto" style=" font-size:60%">
+   
+    <p-tabView>
+    <p-tabPanel header="Table">
+       
     <p-dataTable [value]="funds" selectionMode="single" [(selection)]="selectedFund" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="10" [responsive]="true">
         <header>Funds Service</header>
         <p-column field="fundName" header="Fund Name" [sortable]="true"></p-column>
@@ -9,6 +13,8 @@
        <!-- <p-column field="totalFundDetails" header="Total Fund Details" [sortable]="true"></p-column> -->
         <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
     </p-dataTable>
+    </p-tabPanel>
+</p-tabView>
 
     <p-dialog header="Funds Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
         <div class="ui-grid ui-grid-responsive ui-fluid ui-grid-pad" *ngIf="fund">

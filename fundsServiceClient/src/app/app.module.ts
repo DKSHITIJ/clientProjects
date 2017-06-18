@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
- import { HttpModule } from '@angular/http';
-import {DataTableModule, SharedModule, DialogModule} from 'primeng/primeng';
+import { HttpModule } from '@angular/http';
+import {DataTableModule, SharedModule, DialogModule, TabViewModule} from 'primeng/primeng';
 import { AppComponent } from './app.component';
 import { FundsComponent } from './funds/funds.component';
 import { FundsServiceService } from './funds/funds-service.service';
@@ -20,14 +20,15 @@ import {BaseRequestOptions, Http} from '@angular/http';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-     HttpModule,
+    HttpModule,
     DataTableModule,
-    DialogModule
+    DialogModule,
+    TabViewModule
   ],
   providers: [
-    FundsServiceService,
-    MockFundsService,
-   /* MockBackend,
+     FundsServiceService,
+   /*  MockFundsService,
+    MockBackend,
     BaseRequestOptions,
         {
             provide: Http,
