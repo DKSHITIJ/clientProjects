@@ -10,7 +10,7 @@ import { Funds } from './funds';
 @Injectable()
 export class FundsServiceService {
 
-      getTotalFundsURL = 'http://localhost:8080/v1/fundsservice/totalfunds';
+      getTotalFundsURL = 'http://localhost:8080/v1/fundsserviceclient/totalfunds';
      // getTotalFundsURL = 'assets/data/funds.json';
     constructor(private _http: Http) { }
 
